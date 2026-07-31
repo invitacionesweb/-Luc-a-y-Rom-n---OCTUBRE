@@ -2,7 +2,7 @@
     --color-principal:#faf9f7;
     --color-secundario:#959A80;
     --color-terciario:#959A80;
- 
+
     --font-principal:'Montserrat', sans-serif;
     --font-secundaria:'Montserrat', sans-serif;
 }
@@ -125,10 +125,10 @@ audio::-webkit-media-controls-enclosure {
 audio::-webkit-media-controls-current-time-display {
     display:none !important;
 }
- 
+
 /*COUNTER*/
 .contador {
-    
+
     display: flex;
     color: var(--color-principal);
     background-color: var(--color-secundario);
@@ -191,14 +191,30 @@ audio::-webkit-media-controls-current-time-display {
     align-items: center;
     justify-content: center;
 }
-.boton:hover {
-    color: var(--color-terciario);
-    background-color: var(--color-principal);
-    border: 1px solid var(--color-terciario);
-    padding: 10px 30PX;
-    text-align: center;
-    text-decoration: none;
+
+/* Los estados :hover quedan condicionados a dispositivos con mouse real.
+   Así, en celular/tablet (touch) el primer toque activa el click directo
+   en vez de quedar "atrapado" en el estado hover (que obligaba a tocar 2 veces). */
+@media (hover: hover) and (pointer: fine) {
+    .boton:hover {
+        color: var(--color-terciario);
+        background-color: var(--color-principal);
+        border: 1px solid var(--color-terciario);
+        padding: 10px 30PX;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .boton1:hover {
+        color: var(--color-principal);
+        background-color: var(--color-secundario);
+        border: 1px solid var(--color-principal);
+        padding: 10px 30PX;
+        text-align: center;
+        text-decoration: none;
+    }
 }
+
 .boton1 {
     border: 1px solid var(--color-principal);
     background-color: var(--color-principal);
@@ -210,14 +226,6 @@ audio::-webkit-media-controls-current-time-display {
     border-radius: 50px;
 
 
-}
-.boton1:hover {
-    color: var(--color-principal);
-    background-color: var(--color-secundario);
-    border: 1px solid var(--color-principal);
-    padding: 10px 30PX;
-    text-align: center;
-    text-decoration: none;
 }
 
 .lovestory {
@@ -268,7 +276,7 @@ audio::-webkit-media-controls-current-time-display {
     padding: 0;
     font-size: 1.4em;
     font-weight: bolder;
-   
+
 }
 .ubicacion-bloque p {
     padding:10px 20px 40px 20px;
@@ -288,18 +296,18 @@ audio::-webkit-media-controls-current-time-display {
 }
 .icon {
     width: 80px;
-    
+
 }
 .galeria1 {
     width: 100%;
-   
+
     display: flex;
       gap: 2px;
-    
+
 }
 .galeria1 img {
     width: 25vw;
-  
+
 
 }
 
@@ -315,7 +323,7 @@ audio::-webkit-media-controls-current-time-display {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
+
 
 }
 .timeline img {
@@ -514,7 +522,7 @@ label .grupo-opciones {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    
+
 }
 .galeria2 img {
     width: 25vw;
@@ -531,7 +539,7 @@ label .grupo-opciones {
     align-items: center;
     justify-content: center;
 }
-.dos { 
+.dos {
     width: 100%;
     padding: 30px 0;
     gap: 10px;
@@ -539,9 +547,9 @@ label .grupo-opciones {
     max-width: 500px;
     margin: 50px 0 50px 0;
     border-radius: 20px;
-    
+
 }
-.dos p { 
+.dos p {
     max-width: 500px;
     padding: 0PX 30px;
     text-align: center;
@@ -550,7 +558,7 @@ label .grupo-opciones {
     font-size: 1.2rem;
 
 }
-.tres { 
+.tres {
     width: 100%;
     padding: 60px 0;
     gap: 10px;
@@ -558,7 +566,7 @@ label .grupo-opciones {
     color: var(--color-principal);
 
 }
-.tres p { 
+.tres p {
     max-width: 500px;
     text-align: center;
     margin: auto;
@@ -590,7 +598,7 @@ footer .contenido{
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    
+
 }
 footer img {
     width: 60px;
@@ -624,14 +632,14 @@ footer img {
 
 }
 
-  
+
 .end-names img{
     width: auto;
     height: auto;
     max-width: 300px;
     padding: 0;
     margin: 0;
-   
+
 }
 
 @media (max-width: 600px) {
@@ -642,7 +650,7 @@ footer img {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        
+
     }
     .parallax {
         position: relative;
@@ -652,7 +660,7 @@ footer img {
         background-repeat: no-repeat;
         background-position: center;
       }
-    
+
     .ubicacion {
         flex-direction: column;
         padding: 60px 0;
@@ -665,7 +673,7 @@ footer img {
         background-size: cover;
         unicode-bidi: isolate;
         display: flex;
-        
+
     }
      .fecha img{
         margin:  0 0 10px 0;
@@ -682,7 +690,7 @@ footer img {
         .f2, .f4  {
             display: none;
         }
-    
+
         .galeria1 img {
             width: 100vw;
         }
@@ -691,15 +699,15 @@ footer img {
             display: grid;
             grid-template-columns:1fr 1fr;
         }
-    
+
         .galeria2 img {
             width: 50vw;
         }
 
- 
+
 .timeline .iconos {
     flex-direction: column;
-    
+
 }
 .timeline p {
     font-size: 1.3rem;
@@ -715,5 +723,5 @@ footer img {
             margin: auto;
         }
 
-        
+
     }
